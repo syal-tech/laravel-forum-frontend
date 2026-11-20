@@ -1,5 +1,5 @@
-@if (Session::has('alerts'))
-    @foreach (Session::get('alerts') as $alert)
+@if (session()->has('alerts'))
+    @foreach (session('alerts') as $alert)
         @include ('forum::partials.alert', $alert)
     @endforeach
 @endif

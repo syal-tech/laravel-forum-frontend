@@ -5,8 +5,8 @@
         <h2>{{ trans('forum::threads.new_thread') }} ({{ $category->title }})</h2>
 
         <form method="POST" action="{{ Forum::route('thread.store', $category) }}">
-            {!! csrf_field() !!}
-            {!! method_field('post') !!}
+            @csrf
+            @method('POST')
 
             <div class="form-group">
                 <label for="title">{{ trans('forum::general.title') }}</label>

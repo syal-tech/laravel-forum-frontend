@@ -1,10 +1,10 @@
 {{-- $category is passed as NULL to the master layout view to prevent it from showing in the breadcrumbs --}}
-<?php
+@php
 $data = [];
 $base_controller = new App\Http\Controllers\BaseController();
 $data = $base_controller->data;
 $data['current_user'] = auth()->user();
-?>
+@endphp
 @extends('layouts.homepage', $data)
 
 @section('content-header')

@@ -1,5 +1,5 @@
 <form action="{{ Forum::route('category.store') }}" method="POST">
-    {!! csrf_field() !!}
+    @csrf
 
     <div class="panel panel-default">
         <div class="panel-heading">

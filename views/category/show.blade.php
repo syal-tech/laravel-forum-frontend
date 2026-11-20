@@ -18,8 +18,8 @@
 
         @can ('manageCategories')
             <form action="{{ Forum::route('category.update', $category) }}" method="POST" data-actions-form>
-                {!! csrf_field() !!}
-                {!! method_field('patch') !!}
+                @csrf
+                @method('PATCH')
 
                 @include ('forum::category.partials.actions')
             </form>
@@ -59,8 +59,8 @@
 
         @can ('manageThreads', $category)
             <form action="{{ Forum::route('bulk.thread.update') }}" method="POST" data-actions-form>
-                {!! csrf_field() !!}
-                {!! method_field('delete') !!}
+                @csrf
+                @method('DELETE')
         @endcan
 
         @if ($category->threadsEnabled)
@@ -157,8 +157,8 @@
                 <hr>
                 <div class="text-center">
                     <form action="{{ Forum::route('mark-new') }}" method="POST" data-confirm>
-                        {!! csrf_field() !!}
-                        {!! method_field('patch') !!}
+                        @csrf
+                        @method('PATCH')
                         <input type="hidden" name="category_id" value="{{ $category->id }}">
                         <button class="btn btn-default btn-small">{{ trans('forum::categories.mark_read') }}</button>
                     </form>

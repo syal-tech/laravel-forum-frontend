@@ -9,8 +9,8 @@
         @if (!$post->isFirst)
             @can ('delete', $post)
                 <form action="{{ Forum::route('post.update', $post) }}" method="POST" data-actions-form>
-                    {!! csrf_field() !!}
-                    {!! method_field('delete') !!}
+                    @csrf
+                    @method('DELETE')
 
                     @include ('forum::post.partials.actions')
                 </form>
@@ -24,8 +24,8 @@
         @endif
 
         <form method="POST" action="{{ Forum::route('post.update', $post) }}">
-            {!! csrf_field() !!}
-            {!! method_field('patch') !!}
+            @csrf
+            @method('PATCH')
 
             <div class="form-group">
                 <textarea name="content" class="form-control">{{ !is_null(old('content')) ? old('content') : $post->content }}</textarea>

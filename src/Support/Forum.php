@@ -5,7 +5,7 @@ use Riari\Forum\Models\Category;
 use Riari\Forum\Models\Post;
 use Riari\Forum\Models\Thread;
 use Illuminate\Support\Str;
-use Session;
+use Illuminate\Support\Facades\Session;
 
 class Forum
 {

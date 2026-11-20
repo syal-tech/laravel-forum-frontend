@@ -1,7 +1,7 @@
 {
     "name": "riari/laravel-forum-frontend",
     "description": "A frontend for riari/laravel-forum providing views written with Bootstrap 3",
-    "keywords": ["laravel", "laravel-4", "laravel-5", "forum", "discuss", "frontend"],
+    "keywords": ["laravel", "forum", "discuss", "frontend"],
     "license": "MIT",
     "authors": [
         {
@@ -10,8 +10,9 @@
         }
     ],
     "require": {
-        "php": ">=7.2.0",
-        "riari/laravel-forum": "dev-naesa-upgrade"
+        "php": "^8.1",
+        "laravel/framework": "^10.0",
+        "riari/laravel-forum": "dev-naesa-upgrade-laravel-13"
     },
     "autoload": {
         "psr-4": {
@@ -28,7 +29,7 @@
     "repositories": [
         {
             "type": "vcs",
-            "url": "https://github.com/ipabz/laravel-forum"
+            "url": "https://github.com/syal-tech/laravel-forum"
         }
     ]
 }

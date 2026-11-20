@@ -19,8 +19,8 @@
 
         @can ('manageThreads', $category)
             <form action="{{ Forum::route('thread.update', $thread) }}" method="POST" data-actions-form>
-                {!! csrf_field() !!}
-                {!! method_field('patch') !!}
+                @csrf
+                @method('PATCH')
 
                 @include ('forum::thread.partials.actions')
             </form>
@@ -28,8 +28,8 @@
 
         @can ('deletePosts', $thread)
             <form action="{{ Forum::route('bulk.post.update') }}" method="POST" data-actions-form>
-                {!! csrf_field() !!}
-                {!! method_field('delete') !!}
+                @csrf
+                @method('DELETE')
         @endcan
 
         <div class="row">
@@ -80,7 +80,7 @@
             <h3>{{ trans('forum::general.quick_reply') }}</h3>
             <div id="quick-reply">
                 <form method="POST" action="{{ Forum::route('post.store', $thread) }}">
-                    {!! csrf_field() !!}
+                    @csrf
 
                     <div class="form-group">
                         <textarea name="content" class="form-control">{{ old('content') }}</textarea>
